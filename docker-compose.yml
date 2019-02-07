@@ -6,7 +6,7 @@ services:
       - postgresql
     image: cptactionhank/atlassian-jira:latest 
     networks:
-      - jiranetwork
+      - jira_network
     volumes:
       - jiradata:/var/atlassian/jira
     ports:
@@ -26,7 +26,8 @@ services:
   postgresql:
     image: postgres
     networks:
-      - internal_network 
+        internal_network:
+             ipv4_address: 10.10.10.10 
     volumes:
       - postgresqldata:/var/lib/postgresql/data
     ports:
@@ -49,7 +50,5 @@ volumes:
     external: false
 
 networks:
-  jiranetwork:
+  jira_network:
     driver: bridge
-  internal_network:
-    ipv4_address: 10.10.10.10

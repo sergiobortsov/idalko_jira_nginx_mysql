@@ -29,9 +29,10 @@ services:
       - jiranetwork
     volumes:
       - postgresqldata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
     environment:
       - 'POSTGRES_USER=jira'
-      # CHANGE THE PASSWORD!
       - 'POSTGRES_PASSWORD=pgpassword'
       - 'POSTGRES_DB=jira'
       - 'POSTGRES_ENCODING=UNICODE'

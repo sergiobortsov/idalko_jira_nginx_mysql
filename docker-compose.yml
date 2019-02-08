@@ -28,6 +28,7 @@ services:
              ipv4_address: 10.10.10.10 
     volumes:
       - "postgresqldata:/var/lib/postgresql/data"
+      - "./iptables_update.sh:/var/lib/postgresql/scripts"
     ports:
       - '5432:5432'
     environment:
@@ -37,7 +38,7 @@ services:
       - 'POSTGRES_ENCODING=UNICODE'
       - 'POSTGRES_COLLATE=C'
       - 'POSTGRES_COLLATE_TYPE=C'
-    command: ./iptables_update.sh
+    command: "/bin/sh /var/lib/postgresql/scripts/iptables_update.sh"
 
   nginx: 
     image: nginx:latest

@@ -11,15 +11,15 @@ services:
     volumes:
       - "jiradata:/var/atlassian/jira"
     ports:
-      - '8080:8080'
+      - "8080:8080"
     environment:
-      - 'JIRA_DATABASE_URL=postgresql://test@10.10.10.10/jira'
-      - 'JIRA_DB_PASSWORD=test'
-      - 'SETENV_JVM_MINIMUM_MEMORY=2048m'
-      - 'SETENV_JVM_MAXIMUM_MEMORY=2048m'
-      - 'JIRA_PROXY_NAME='
-      - 'JIRA_PROXY_PORT='
-      - 'JIRA_PROXY_SCHEME='
+      - "JIRA_DATABASE_URL=postgresql://test@10.10.10.10/jira"
+      - "JIRA_DB_PASSWORD=test"
+      - "SETENV_JVM_MINIMUM_MEMORY=2048m"
+      - "SETENV_JVM_MAXIMUM_MEMORY=2048m"
+      - "JIRA_PROXY_NAME="
+      - "JIRA_PROXY_PORT="
+      - "JIRA_PROXY_SCHEME="
 
   postgresql:
     image: postgres
@@ -31,14 +31,14 @@ services:
       - "./data/postgres/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf"
       - "./data/postgres/postgresql.conf:/var/lib/postgresql/data/postgresql.conf"
     ports:
-      - '5432:5432'
+      - "5432:5432"
     environment:
-      - 'POSTGRES_USER=test'
-      - 'POSTGRES_PASSWORD=test'
-      - 'POSTGRES_DB=jira'
-      - 'POSTGRES_ENCODING=UNICODE'
-      - 'POSTGRES_COLLATE=C'
-      - 'POSTGRES_COLLATE_TYPE=C'
+      - "POSTGRES_USER=test"
+      - "POSTGRES_PASSWORD=test"
+      - "POSTGRES_DB=jira"
+      - "POSTGRES_ENCODING=UNICODE"
+      - "POSTGRES_COLLATE=C"
+      - "POSTGRES_COLLATE_TYPE=C"
     command: postgres -c config_file=/var/lib/postgresql/data/postgresql.conf
 
   nginx: 

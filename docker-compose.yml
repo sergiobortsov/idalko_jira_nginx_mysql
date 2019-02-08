@@ -13,7 +13,7 @@ services:
     ports:
       - '8080:8080'
     environment:
-      - 'JIRA_DATABASE_URL=postgresql://test@postgresql/jira'
+      - 'JIRA_DATABASE_URL=postgresql://test@10.10.10.10/jira'
       - 'JIRA_DB_PASSWORD=test'
       - 'SETENV_JVM_MINIMUM_MEMORY=2048m'
       - 'SETENV_JVM_MAXIMUM_MEMORY=2048m'

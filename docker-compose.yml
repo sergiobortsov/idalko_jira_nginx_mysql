@@ -6,7 +6,8 @@ services:
       - postgresql
     image: cptactionhank/atlassian-jira:latest 
     networks:
-      - jira_network
+        internal_network:
+             ipv4_address: 10.10.10.11 
     volumes:
       - jiradata:/var/atlassian/jira
     ports:

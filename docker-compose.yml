@@ -18,7 +18,7 @@ services:
       - 'SETENV_JVM_MINIMUM_MEMORY=2048m'
       - 'SETENV_JVM_MAXIMUM_MEMORY=2048m'
       - 'JIRA_PROXY_NAME='
-      - 'JIRA_PROXY_PORT='
+      - 'JIRA_PROXY_PORT=8080'
       - 'JIRA_PROXY_SCHEME='
     labels:
       com.blacklabelops.description: "iDalko Test Task Jira"

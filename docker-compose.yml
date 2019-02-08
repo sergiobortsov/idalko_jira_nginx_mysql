@@ -37,7 +37,6 @@ services:
       - 'POSTGRES_ENCODING=UNICODE'
       - 'POSTGRES_COLLATE=C'
       - 'POSTGRES_COLLATE_TYPE=C'
-      - 'POSTGRES_COLLATE_TYPE=C'
     labels:
       com.blacklabelops.description: "PostgreSQL Database Server"
       com.blacklabelops.service: "postgresql"

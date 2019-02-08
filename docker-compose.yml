@@ -13,8 +13,8 @@ services:
     ports:
       - '8080:8080'
     environment:
-      - 'JIRA_DATABASE_URL=postgresql://jira@postgresql/jira'
-      - 'JIRA_DB_PASSWORD=pgpassword'
+      - 'JIRA_DATABASE_URL=postgresql://test@postgresql/jira'
+      - 'JIRA_DB_PASSWORD=test'
       - 'SETENV_JVM_MINIMUM_MEMORY=2048m'
       - 'SETENV_JVM_MAXIMUM_MEMORY=2048m'
       - 'JIRA_PROXY_NAME='
@@ -28,17 +28,16 @@ services:
              ipv4_address: 10.10.10.10 
     volumes:
       - "postgresqldata:/var/lib/postgresql/data"
-      - "./data/iptables_update.sh:/usr/bin/iptables_update.sh"
+      - "./data/postgres/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf"
     ports:
       - '5432:5432'
     environment:
-      - 'POSTGRES_USER=jira'
-      - 'POSTGRES_PASSWORD=pgpassword'
+      - 'POSTGRES_USER=test'
+      - 'POSTGRES_PASSWORD=test'
       - 'POSTGRES_DB=jira'
       - 'POSTGRES_ENCODING=UNICODE'
       - 'POSTGRES_COLLATE=C'
       - 'POSTGRES_COLLATE_TYPE=C'
-    command: "/bin/sh /usr/bin/iptables_update.sh"
 
   nginx: 
     image: nginx:latest

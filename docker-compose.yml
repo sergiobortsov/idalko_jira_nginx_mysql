@@ -20,6 +20,7 @@ services:
       - 'JIRA_PROXY_NAME=iDalko Test Task Jira'
       - 'JIRA_PROXY_PORT=8080'
       - 'JIRA_PROXY_SCHEME='
+      - 'JIRA_CONNECTOR_ADDRESS=10.10.10.11'
     labels:
       com.blacklabelops.description: "iDalko Test Task Jira"
       com.blacklabelops.service: "jira"

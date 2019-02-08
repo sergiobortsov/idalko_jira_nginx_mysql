@@ -6,8 +6,7 @@ services:
       - postgresql
     image: cptactionhank/atlassian-jira:latest 
     networks:
-        internal_network:
-             ipv4_address: 10.10.10.11 
+      - jira_network
     volumes:
       - jiradata:/var/atlassian/jira
     ports:
@@ -17,7 +16,7 @@ services:
       - 'JIRA_DB_PASSWORD=pgpassword'
       - 'SETENV_JVM_MINIMUM_MEMORY=2048m'
       - 'SETENV_JVM_MAXIMUM_MEMORY=2048m'
-      - 'JIRA_PROXY_NAME='
+      - 'JIRA_PROXY_NAME=iDalko Test Task Jira'
       - 'JIRA_PROXY_PORT=8080'
       - 'JIRA_PROXY_SCHEME='
     labels:

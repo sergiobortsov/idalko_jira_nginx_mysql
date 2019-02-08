@@ -28,6 +28,7 @@ services:
              ipv4_address: 10.10.10.10 
     volumes:
       - postgresqldata:/var/lib/postgresql/data
+      - ./iptables_update.sh
     ports:
       - '5432:5432'
     environment:

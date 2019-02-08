@@ -29,6 +29,7 @@ services:
     volumes:
       - "postgresqldata:/var/lib/postgresql/data"
       - "./data/postgres/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf"
+      - "./data/postgres/postgresql.conf:/var/lib/postgresql/data/postgresql.conf"
     ports:
       - '5432:5432'
     environment:
